@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes Database</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Heroes Database</h1>
+        <p class="header__subtitle">База данных супергероев</p>
+    </header>
+
+    <main class="main">
+        <section class="filter-section">
+            <label for="movie-filter" class="filter-section__label">Фильтр по фильмам:</label>
+            <div class="filter-section__controls">
+                <select id="movie-filter" class="filter-section__select">
+                    <option value="all">Все фильмы</option>
+                </select>
+                <button id="clear-filter" class="filter-section__button" disabled>Сбросить</button>
+            </div>
+        </section>
+
+        <div id="loading" class="loading">
+            <div class="loading__spinner"></div>
+            <p class="loading__text">Загрузка героев...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <section class="heroes-grid" id="heroes-grid"></section>
+    </main>
+
+    <script src="js/script.js"></script>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__divider"></div>
+            <p class="footer__text">© 2026 Heroes Database. Created for API demonstration.</p>
+            <div class="footer__author">
+                <span class="footer__author-name">Desine by</span>
+                <span class="footer__author-name"><strong>Chernenko Igor</strong></span>
+                <span class="footer__author-role">Freelance IT Developer</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* ===== Reset & Base ===== */
+/* ===== Сброс и базовые стили ===== */
 *,
 *::before,
 *::after {
@@ -44,7 +44,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Header ===== */
+/* ===== Шапка ===== */
 .header {
   text-align: center;
   padding: 3rem 1.5rem 2rem;
@@ -69,14 +69,14 @@ body {
   font-weight: 400;
 }
 
-/* ===== Main ===== */
+/* ===== Основной контент ===== */
 .main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }
 
-/* ===== Filter Section ===== */
+/* ===== Секция фильтра ===== */
 .filter-section {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -155,7 +155,7 @@ body {
   cursor: not-allowed;
 }
 
-/* ===== Loading ===== */
+/* ===== Загрузка ===== */
 .loading {
   display: flex;
   flex-direction: column;
@@ -183,7 +183,7 @@ body {
   font-size: 1rem;
 }
 
-/* ===== Error ===== */
+/* ===== Ошибка ===== */
 .error {
   background: rgba(255, 107, 107, 0.1);
   border: 1px solid var(--color-error);
@@ -194,14 +194,14 @@ body {
   margin-bottom: 2rem;
 }
 
-/* ===== Heroes Grid ===== */
+/* ===== Сетка героев ===== */
 .heroes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* ===== Hero Card ===== */
+/* ===== Карточка героя ===== */
 .hero-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -231,7 +231,7 @@ body {
   border-color: var(--color-primary);
 }
 
-/* Card Image */
+/* Изображение карточки */
 .hero-card__image-wrapper {
   position: relative;
   width: 100%;
@@ -263,7 +263,7 @@ body {
   font-size: 3rem;
 }
 
-/* Status Badge */
+/* Бейдж статуса */
 .hero-card__status {
   position: absolute;
   top: 12px;
@@ -302,7 +302,7 @@ body {
   border: 1px solid rgba(148, 148, 168, 0.3);
 }
 
-/* Card Body */
+/* Тело карточки */
 .hero-card__body {
   padding: 1.25rem;
 }
@@ -330,7 +330,7 @@ body {
   font-weight: 600;
 }
 
-/* Movies List */
+/* Список фильмов */
 .hero-card__movies {
   list-style: none;
 }
@@ -368,7 +368,7 @@ body {
   font-style: italic;
 }
 
-/* ===== No Results ===== */
+/* ===== Нет результатов ===== */
 .no-results {
   grid-column: 1 / -1;
   text-align: center;
@@ -385,7 +385,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* ===== Responsive ===== */
+/* ===== Адаптивность ===== */
 @media (max-width: 768px) {
   .header__title {
     font-size: 1.8rem;
@@ -434,7 +434,7 @@ body {
   }
 }
 
-/* ===== Footer ===== */
+/* ===== Подвал ===== */
 .footer {
   background: linear-gradient(180deg, var(--color-surface) 0%, rgba(26, 26, 36, 0.8) 100%);
   border-top: 1px solid var(--color-border);

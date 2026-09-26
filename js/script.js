@@ -11,7 +11,7 @@
   let allHeroes = [];
   let allMovies = [];
 
-  // ===== AJAX Request (Fetch API) =====
+  // ===== AJAX-запрос (XMLHttpRequest) =====
   function fetchData(url) {
     return new Promise(function (resolve, reject) {
       var xhr = new XMLHttpRequest();
@@ -39,7 +39,7 @@
     });
   }
 
-  // ===== Collect unique movies =====
+  // ===== Сбор уникальных фильмов =====
   function collectMovies(heroes) {
     var moviesSet = {};
     for (var i = 0; i < heroes.length; i++) {
@@ -56,7 +56,7 @@
     return Object.keys(moviesSet).sort();
   }
 
-  // ===== Populate filter dropdown =====
+  // ===== Заполнение выпадающего списка фильтра =====
   function populateFilter(movies) {
     for (var i = 0; i < movies.length; i++) {
       var option = document.createElement('option');
@@ -66,7 +66,7 @@
     }
   }
 
-  // ===== Get status label =====
+  // ===== Получить метку статуса =====
   function getStatusLabel(status) {
     var labels = {
       'alive': 'Жив',
@@ -77,7 +77,7 @@
     return labels[status] || status;
   }
 
-  // ===== Get status CSS class =====
+  // ===== Получить CSS-класс статуса =====
   function getStatusClass(status) {
     if (status === 'alive') return 'alive';
     if (status === 'deceased') return 'deceased';
@@ -85,13 +85,13 @@
     return 'unknown';
   }
 
-  // ===== Create hero card HTML =====
+  // ===== Создание HTML карточки героя =====
   function createHeroCard(hero, index) {
     var card = document.createElement('div');
     card.className = 'hero-card';
     card.style.animationDelay = (index * 0.05) + 's';
 
-    // Image
+    // Изображение
     var imageWrapper = document.createElement('div');
     imageWrapper.className = 'hero-card__image-wrapper';
 
@@ -116,7 +116,7 @@
       imageWrapper.appendChild(fallback);
     }
 
-    // Status badge
+    // Бейдж статуса
     if (hero.status) {
       var badge = document.createElement('span');
       badge.className = 'hero-card__status hero-card__status--' + getStatusClass(hero.status);
@@ -126,17 +126,17 @@
 
     card.appendChild(imageWrapper);
 
-    // Body
+    // Тело карточки
     var body = document.createElement('div');
     body.className = 'hero-card__body';
 
-    // Name
+    // Имя
     var nameEl = document.createElement('h3');
     nameEl.className = 'hero-card__name';
     nameEl.textContent = hero.name;
     body.appendChild(nameEl);
 
-    // Actor / Real name
+    // Актёр / Настоящее имя
     if (hero.actors) {
       var infoEl = document.createElement('p');
       infoEl.className = 'hero-card__actor';
@@ -144,7 +144,7 @@
       body.appendChild(infoEl);
     }
 
-    // Movies
+    // Фильмы
     if (hero.movies && hero.movies.length > 0) {
       var moviesLabel = document.createElement('p');
       moviesLabel.className = 'hero-card__movies-label';
@@ -175,14 +175,14 @@
     return card;
   }
 
-  // ===== Escape HTML =====
+  // ===== Экранирование HTML =====
   function escapeHtml(text) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(text));
     return div.innerHTML;
   }
 
-  // ===== Render heroes =====
+  // ===== Отрисовка героев =====
   function renderHeroes(heroes) {
     grid.innerHTML = '';
 
@@ -200,7 +200,7 @@
     }
   }
 
-  // ===== Filter heroes by movie =====
+  // ===== Фильтрация героев по фильму =====
   function filterByMovie(movieName) {
     if (movieName === 'all') {
       renderHeroes(allHeroes);
@@ -225,7 +225,7 @@
     clearButton.disabled = false;
   }
 
-  // ===== Event Listeners =====
+  // ===== Обработчики событий =====
   filterSelect.addEventListener('change', function () {
     var selectedValue = filterSelect.value;
     filterByMovie(selectedValue);
@@ -236,7 +236,7 @@
     filterByMovie('all');
   });
 
-  // ===== Initialize =====
+  // ===== Инициализация =====
   function init() {
     fetchData(DATA_URL)
       .then(function (data) {
